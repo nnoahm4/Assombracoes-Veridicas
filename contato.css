@@ -1,0 +1,200 @@
+/* site */
+*{
+	font-family: 'Times New Roman', Times, serif;
+}
+
+html, body {
+    overflow: hidden;
+  }
+
+	body {
+	margin: 0;
+	padding: 0;
+	background-color: #191919; /* cor da pagina */
+}
+
+
+/* quadrado */
+.quadrado {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 1220px;
+	height: 550px;
+	background-color: #141414;
+	border-radius: 20px;
+}
+
+
+/* titulo */
+.titulo {
+	color: #cecece;
+	margin-top: 40px;
+	margin-left:40px;
+	font-size: 70px;
+}
+
+
+/* texto-principal */
+.texto-principal {
+	color: #cecece;
+	margin-top: 96px;
+	margin-left:40px;
+	font-size: 20px;
+ }
+
+
+ /* quadrado interno */
+ .quadrado-interno {
+    width: 490px;
+    height: 490px;
+    margin-right: 60px;
+    border-radius: 10px;
+    background-color: #191919;
+    background-image: url('soler2.jpg');
+    background-size: 96%;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+  }
+
+.quadrado-interno img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px; /* adiciona bordas arredondadas à imagem */
+  }
+
+
+  /* botão flutuante */
+.botao-flutuante {
+	position: fixed;
+	bottom: 20px;
+	right: 20px;
+	width: 50px;
+	height: 50px;
+	background-color: #FF4136;
+	color: #cecece;
+	border: none;
+	border-radius: 50%;
+	font-size: 24px;
+	line-height: 48px;
+	text-align: center;
+	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+	z-index: 9999; /* z-index maior que o do quadrado */
+	cursor: pointer;
+}
+
+#opcoes {
+	position: fixed;
+	bottom: 90px;
+	right: 20px;
+	padding: 10px;
+	background-color: #cecece;
+	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+	display: none;
+	z-index: 9999; /* z-index maior que o do quadrado */
+}
+
+#opcoes ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+#opcoes ul li {
+	margin: 10px 0;
+}
+
+#opcoes ul li a {
+	color: #cecece;
+	text-decoration: none;
+	font-size: 16px;
+}
+
+#opcoes ul li a:hover {
+	text-decoration: underline;
+}
+
+/* botão centralizado */
+.botao-centralizado {
+	display: flex;
+	margin-top: 30px;
+	margin-left:40px;
+  }
+  
+  a {
+	background-color: #FF4136;
+	color: white;
+	padding: 10px 20px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 16px;
+	border-radius: 5px;
+	transition: background-color 0.3s ease-in-out;
+  }
+  a:active {
+	background-color: #cecece;
+	transform: scale(0.9);
+  }
+  
+
+/* sangue */
+.sangue-pingando {
+	position: absolute;
+	width: 20px;
+	height: 20px;
+	border-radius: 50%;
+	background-color: #FF4136;
+	animation: pingos-animacao 2s linear infinite;
+	box-shadow: 0 0 10px #FF4136;
+	opacity: 0.8;
+}
+
+.sangue-escorrendo {
+	position: absolute;
+	width: 20px;
+	height: 20px;
+	background-color: #FF4136;
+	border-radius: 50%;
+	box-shadow: 0 0 10px #FF4136;
+	opacity: 0.8;
+	animation: escorrendo-animacao 2s linear infinite;
+	transform: rotate(45deg);
+	top: -10px;
+	left: -10px;
+	z-index: -1;
+}
+
+@keyframes pingos-animacao {
+	0% {
+		transform: translateY(0);
+	}
+
+	50% {
+		transform: translateY(100px);
+	}
+
+	100% {
+		transform: translateY(0);
+	}
+}
+
+@keyframes escorrendo-animacao {
+	0% {
+		transform: rotate(45deg) translateY(-10px);
+	}
+
+	50% {
+		transform: rotate(45deg) translateY(100px);
+	}
+
+	100% {
+		transform: rotate(45deg) translateY(0);
+	}
+}
